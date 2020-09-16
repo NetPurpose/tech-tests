@@ -23,7 +23,7 @@ Overall we are looking for:
 Ultimately, this is an exercise for us to see how you think, and whilst there may be some wrong answers, there isn't a specific right answer either. We want to see you make technical decisions which are well informed, and can be justified within the context of the problem given.
 
 ## Getting started
-There is some boilerplate code provided, but it has a strong opinion on the technology choices you would make (most notably using PostgreSQL and SQLAlchemy for the database). You are free to use as much of that boiler plate as you wish, and if you feel more comfortable with a different set of tools, then please go ahead - just be prepared to justify your choices! We do ask, however, that you stick to Python as the main language for the code, as this is currently the main language of our stack.
+There is some boilerplate code provided, but it has a strong opinion on the technology choices you would make (most notably using PostgreSQL and SQLAlchemy for the database). You are free to use as much of that boilerplate as you wish, and if you feel more comfortable with a different set of tools, then please go ahead - just be prepared to justify your choices! We do ask, however, that you stick to Python as the main language for the code, as this is currently the main language of our stack.
 
 The project was setup with python3.7, and requirements for the basics are in requirements.txt.
 
