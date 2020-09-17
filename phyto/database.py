@@ -53,6 +53,7 @@ class Sample(Base):
 
 
 if __name__ == "__main__":
-    drop_database(get_db_url())
+    if database_exists(get_db_url()):
+        drop_database(get_db_url())
     create_database(get_db_url())
     Base.metadata.create_all(engine)
