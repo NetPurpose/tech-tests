@@ -2,7 +2,7 @@
 
 ## What is the task?
 
-Your task is to create a frontend "admin dashboard" for some fictional portfolio holdings. Portfolio details will be delivered via the API (see below). We're expecting you to spend a few hours on this task.
+Your task is to create a frontend "admin dashboard" for some fictional portfolio holdings. Portfolio details will be delivered via the API (see below). We're expecting you to spend a few hours on this.
 
 We want to see three things: integration with APIs, display of data, and user interaction.
 
@@ -12,7 +12,7 @@ We'd like to see you fetch portfolio holdings data from the included API (see be
 
 ### 2. Display data
 
-Show the data retrieved from the APIs on the page. Bonus points for creative visualisations and ideas (we like charts)!
+Show the data retrieved from the APIs on the page. Bonus points for creative visualisations and ideas (we like charts 📊)
 
 Some ideas (we're not expecting all of these!):
 
