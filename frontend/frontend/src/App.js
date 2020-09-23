@@ -1,12 +1,12 @@
 import React, { useState, useEffect } from "react"
 import "./App.css"
 
-const loginAndGetItems = async () => {
+const loginAndGetHoldings = async () => {
   const tokenRequestPayload = new URLSearchParams()
   tokenRequestPayload.append("username", "admin@frontend.com")
   tokenRequestPayload.append("password", "changethis")
 
-  const tokenResponse = await fetch("/api/v1/login/access-token", {
+  const tokenResponse = await fetch("/api/v1/login/access-token/", {
     method: "POST",
     headers: {
       "Content-Type": "application/x-www-form-urlencoded",
@@ -15,22 +15,22 @@ const loginAndGetItems = async () => {
   })
   const { access_token: token } = await tokenResponse.json()
 
-  const itemsResponse = await fetch("/api/v1/items/", {
+  const holdingsResponse = await fetch("/api/v1/holdings/", {
     // careful, you need the trailing slash ;)
     headers: {
       Authorization: `Bearer ${token}`,
     },
   })
-  return itemsResponse.json()
+  return holdingsResponse.json()
 }
 
 const App = () => {
-  const [data, setData] = useState({ items: [] })
+  const [data, setData] = useState({ holdings: [] })
 
   useEffect(() => {
     const getData = async () => {
-      const items = await loginAndGetItems()
-      setData({ items })
+      const holdings = await loginAndGetHoldings()
+      setData({ holdings })
     }
     getData()
   }, [])
@@ -39,7 +39,7 @@ const App = () => {
     <div className="App">
       <header className="App-header">
         <pre style={{ textAlign: "left" }}>
-          Items: {JSON.stringify(data.items, null, 2)}
+          Holdings: {JSON.stringify(data.holdings, null, 2)}
         </pre>
       </header>
     </div>

@@ -9,9 +9,10 @@ if TYPE_CHECKING:
     from .user import User  # noqa: F401
 
 
-class Item(Base):
+class Holding(Base):
     id = Column(Integer, primary_key=True, index=True)
-    title = Column(String, index=True)
-    description = Column(String, index=True)
+    name = Column(String, index=True)
+    ticker = Column(String, index=True)
+    value = Column(Integer)
     owner_id = Column(Integer, ForeignKey("user.id"))
-    owner = relationship("User", back_populates="items")
+    owner = relationship("User", back_populates="holdings")

@@ -1,16 +1,16 @@
-# Net Purpose frontend tech test
+# Net Purpose frontend tech test 🎨
 
 ## What is the task?
 
-Your task is to create a frontend "admin dashboard" for some fictional portfolio holdings. Portfolio details will be delivered via the API (see below)
+Your task is to create a frontend "admin dashboard" for some fictional portfolio holdings. Portfolio details will be delivered via the API (see below). We're expecting you to spend a few hours on this task.
 
 We want to see three things: integration with APIs, display of data, and user interaction.
 
-1. Integration with API
+### 1. Integration with API
 
 We'd like to see you fetch portfolio holdings data from the included API (see below for details), and ideally combine information from an external source like [AlphaVantage](https://www.alphavantage.co/).
 
-2. Display data
+### 2. Display data
 
 Show the data retrieved from the APIs on the page. Bonus points for creative visualisations and ideas (we like charts)!
 
@@ -20,7 +20,7 @@ Some ideas (we're not expecting all of these!):
 - Aggregate statistics on holdings, e.g. total portfolio value
 - Holdings performance over time - [link](https://www.alphavantage.co/documentation/#time-series-data)
 
-3.  User interaction
+### 3. User interaction
 
 An example of the user interacting with the page, e.g. using buttons, sliders, dropdowns etc.
 
@@ -53,11 +53,38 @@ There is an example request to the API in `App.js`.
 
 ### API
 
-Describe the existing API
+Check out the swagger at [http://localhost/docs](http://localhost/docs).
 
-- Docs at [http://localhost/docs](http://localhost/docs)
+The API consists of three main endpoints: `/login`, `/users`, and `/holdings`:
 
-- If you want to inspect the database using pgAdmin - [http://localhost:5050](http://localhost:5050/)
+- `/login` - POST username and password, get back a JWT to use as Bearer auth with the other endpoints
+- `/users` - CRUD user management
+- `/holdings` - CRUD holdings - e.g. `GET /holdings` will return a list of your holdings
+
+You can login using these credentials to start with, it's up to you if you want to make your app multitenant:
+
+- user: admin@frontend.com
+- password: changethis
+
+| ⚠️ Careful - the holdings for this user will reset whenever the backend is restarted
+
+### Database
+
+Open a psql session with `docker-compose exec db bash`, then `psql -d app -U postgres`. Alternatively, you can inspect using pgAdmin - [http://localhost:5050](http://localhost:5050/)
+
+Mainly we are interested in the `holding` table:
+
+```
+id  |                name                | ticker | value | owner_id
+-----+------------------------------------+--------+-------+----------
+ 694 | APPLE INC                          | AAPL   | 82345 |        1
+ 695 | MICROSOFT CORP                     | MSFT   | 12727 |        1
+```
+
+- Name: name of the company
+- Ticker: short code identifying the company, you can use this e.g. to look up data through AlphaVantage
+- Value: the 'amount' of stock held in that company, you can imagine this is in e.g. USD
+- Owner ID: foreign key to users table
 
 ## How to get it running
 
@@ -78,4 +105,6 @@ docker-compose up -d
 yarn && yarn start
 ```
 
-Now go to [http://localhost:3000](http://localhost:3000) and you should see the app!
+Now go to [http://localhost:3000](http://localhost:3000) and you should see the app.
+
+Happy coding! ⌨️ 🖥 📊 🎨 ✨

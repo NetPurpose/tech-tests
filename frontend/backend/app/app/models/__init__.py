@@ -1,2 +1,2 @@
-from .item import Item
+from .holding import Holding
 from .user import User
