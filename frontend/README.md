@@ -2,7 +2,7 @@
 
 ## What is the task?
 
-Your task is to create a frontend "admin dashboard" for some fictional portfolio holdings. Portfolio details will be delivered via the API (see below). We're expecting you to spend a few hours on this.
+Your task is to create a frontend "admin dashboard" for some fictional portfolio holdings. Portfolio details will be delivered via the API (see below). We don't expect you to spend more than a couple hours on this, and there is no need to worry about updating the backend folder.
 
 We want to see three things: integration with APIs, display of data, and user interaction.
 
@@ -12,11 +12,14 @@ We'd like to see you fetch portfolio holdings data from the included API (see be
 
 ### 2. Display data
 
-Show the data retrieved from the APIs on the page. Bonus points for creative visualisations and ideas (we like charts 📊)
+Show the data retrieved from the API(s) on the page. Bonus points for creative visualisations and ideas (we like charts 📊)
 
-Some ideas (we're not expecting all of these!):
+Mandatory feature set:
 
 - List of holdings
+
+Some ideas to extend if you have time:
+
 - Aggregate statistics on holdings, e.g. total portfolio value
 - Holdings performance over time - [link](https://www.alphavantage.co/documentation/#time-series-data)
 
@@ -24,11 +27,26 @@ Some ideas (we're not expecting all of these!):
 
 An example of the user interacting with the page, e.g. using buttons, sliders, dropdowns etc.
 
-Some ideas for this part (again not expecting all of them, and feel free to come up with something more interesting):
+Mandatory feature set:
+
+- Add and remove a holding (ideally on a separate page)
+- Sort the displayed list of holdings (e.g. by name and value)
+
+Some ideas to extend this part (feel free to come up with something more interesting):
 
 - Login flow
-- Add / update / remove a holding
-- Filter and sort the data that's displayed
+- Update a holding
+- Search and filter the data that's displayed
+
+### Summary
+
+So, you should end up with an app that:
+
+- Grabs holdings data from the local API
+- Displays that on the page, with options to sort by name or value
+- On a separate page, allows you to add and remove a holding
+
+Plus whatever extensions you have time for!
 
 ## Judging criteria
 
