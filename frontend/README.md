@@ -66,7 +66,7 @@ You can login using these credentials to start with, it's up to you if you want 
 - user: admin@frontend.com
 - password: changethis
 
-> ⚠️ Careful - the holdings for this user will reset whenever the backend is restarted
+> ⚠️ The holdings for this user will reset whenever the backend is restarted
 
 ### Database
 
