@@ -75,7 +75,7 @@ Open a psql session with `docker-compose exec db bash`, then `psql -d app -U pos
 Mainly we are interested in the `holding` table:
 
 ```
-id  |                name                | ticker | value | owner_id
+ id  |                name                | ticker | value | owner_id
 -----+------------------------------------+--------+-------+----------
  694 | APPLE INC                          | AAPL   | 82345 |        1
  695 | MICROSOFT CORP                     | MSFT   | 12727 |        1
