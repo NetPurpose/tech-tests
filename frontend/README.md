@@ -71,7 +71,7 @@ There is an example request to the API in `App.js`.
 
 ### API
 
-Check out the swagger at [http://localhost/docs](http://localhost/docs).
+Check out the swagger at [http://localhost/docs](http://localhost/docs). (See "How to get it running" below first)
 
 The API consists of three main endpoints: `/login`, `/users`, and `/holdings`:
 
