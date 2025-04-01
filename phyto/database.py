@@ -1,6 +1,6 @@
-from sqlalchemy import create_engine
-from sqlalchemy.orm import sessionmaker, DeclarativeBase
-from sqlalchemy_utils import database_exists, drop_database, create_database
+from sqlalchemy import create_engine, Column, Integer, String, ForeignKey, Date
+from sqlalchemy.orm import sessionmaker, relationship, declarative_base
+from sqlalchemy_utils.functions import database_exists, create_database, drop_database
 
 
 def get_db_url(db_name: str = "phyto_db") -> str:
@@ -15,9 +15,11 @@ Session = sessionmaker(engine)
 
 
 # Use this to define ORM models of your database:
-# https://docs.sqlalchemy.org/en/20/orm/quickstart.html
-class Base(DeclarativeBase):
-    pass
+# https://docs.sqlalchemy.org/en/20/orm/quickstart.html#declare-models
+Base = declarative_base()
+
+
+# Define models using Base above
 
 
 if __name__ == "__main__":
