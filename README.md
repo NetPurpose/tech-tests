@@ -6,11 +6,11 @@ In the data folder is a `.csv` file containing information on the counts of vari
 
 Your goal is to:
 
-1. Design a datamodel to store this data.
-2. Create a flow to take the data from the csv and load it into that data model
-3. Write an interface for two queries:
-   - Get phytoplankton counts by year as a function of local authority.
-   - The 10 slowest samples to be processed (i.e. longest time from collection to analysis), for each collection method. # Note this is possible in a single SQL query, but doesn't have to be done so.
+1. Design a datamodel in the DB to store this data.
+2. Create a pipeline to take the data from the csv and load it into your database.
+3. Write an interface for two kinds of queries:
+  * Get phytoplankton counts by year as a function of local authority. i.e. We would like to be able to answer the question: `What was the total count of Dino for each year in Weymouth PHA`.
+  * The 5 slowest samples to be processed for each collection method.
 
 ## What we're looking for
 
@@ -18,9 +18,9 @@ When completing the project try and complete it as if this is an MVP product for
 
 Overall we are looking for:
 
-- Code quality and style
-- Ability to work with data
-- Data design and wider thinking
+* Code quality and style
+* Ability to work with data (Data isn't always clean, the attached .csv is a testament to that!)
+* Data design and wider thinking
 
 Ultimately, this is an exercise for us to see how you think, and whilst there may be some wrong answers, there isn't a specific right answer either. We want to see you make technical decisions which are well informed, and can be justified within the context of the problem given.
 
@@ -28,19 +28,17 @@ Ultimately, this is an exercise for us to see how you think, and whilst there ma
 
 There is some boilerplate code provided, but it has a strong opinion on the technology choices you would make (most notably using PostgreSQL and SQLAlchemy for the database). You are free to use as much of that boilerplate as you wish, and if you feel more comfortable with a different set of tools, then please go ahead - just be prepared to justify your choices! We do ask, however, that you stick to Python as the main language for the code, as this is currently the main language of our stack.
 
-The project was setup with python3.7, and requirements for the basics are in requirements.txt.
+The project was setup with python3.10, and requirements for the basics are in requirements.txt.
 
 If you install these:
 
-- [virtualenv](https://virtualenv.pypa.io/en/stable/installation.html)
-- [Docker](https://docs.docker.com/engine/install/)
-- [docker-compose](https://docs.docker.com/compose/install/)
-- [gnu-make](https://www.gnu.org/software/make/)
+* [virtualenv](https://virtualenv.pypa.io/en/stable/installation.html)
+* [Docker](https://docs.docker.com/engine/install/)
+* [docker-compose](https://docs.docker.com/compose/install/)
+* [gnu-make](https://www.gnu.org/software/make/)
 
-the provided `Makefile` will give you three commands:
+The provided `Makefile` will give you three commands:
 
-- `install`: use virtualenv to create a local virtual environment and install all requirements into it.
-
-- `start`: spin up the docker containers using docker-compose, then run the `phyto.database.py` file
-
-- `stop`: stop the local containers
+* `install`: use virtualenv to create a local virtual environment and install all requirements into it.
+* `start`: spin up the docker containers using docker-compose, then run the `phyto.database.py` file
+* `stop`: stop the local containers
